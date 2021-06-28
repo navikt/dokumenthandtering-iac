@@ -3,7 +3,7 @@
 # Funksjonelle Krav
 Denne applikasjonen automatisere arbeidet for å oppdatere eller opprette nye kafka topics til Aiven. For å slette topics så må det gjøres manuelt med å følge denne linken: [nais-aiven](https://doc.nais.io/addons/kafka/#delete-schema) 
 
-Denne applikasjonen er basert på [confluence](https://github.com/navikt/dagpenger-iac)
+Denne applikasjonen er basert på [dagpenger-iac](https://github.com/navikt/dagpenger-iac)
 
 # Begrensninger
 tjenesten har ikke noe forhold på innholdt til feltet epostTekst og smsTekst.
