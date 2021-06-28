@@ -5,12 +5,9 @@ Denne applikasjonen automatisere arbeidet for å oppdatere eller opprette nye ka
 
 Denne applikasjonen er basert på [dagpenger-iac](https://github.com/navikt/dagpenger-iac)
 
-# Begrensninger
-tjenesten har ikke noe forhold på innholdt til feltet epostTekst og smsTekst.
-
-# Utviklingsmiljø
-## Forutsetninger
+# Forutsetninger
 * Tilgang for å deploye til teamdokumenthandtering på github
+* Sette opp lokalt tilgang for gcp for [kubectl](https://doc.nais.io/basics/access/#authenticate-kubectl)
 
 # Opprettelse av topics
 
@@ -20,7 +17,7 @@ tjenesten har ikke noe forhold på innholdt til feltet epostTekst og smsTekst.
 4. Sjekk at topics er ressursen er opprettet og klar i dev/prod-gcp klustrene
 
 ```
-kubectl  get topic
+kubectl get topic
 
 NAME                 AGE   STATE             FULLY QUALIFIED NAME               CREDENTIALS EXPIRY TIME
 arena.oppgave.v1     18m   RolloutComplete   teamdagpenger.arena.oppgave.v1
