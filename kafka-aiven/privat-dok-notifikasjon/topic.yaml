@@ -15,3 +15,6 @@ spec:
     - team: teamdokumenthandtering
       application: doknotifikasjon
       access: read
+    - team: personbruker
+      application: dittnav-varselbestiller
+      access: write

@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: privat-dok-notifikasjon-stopp
+  name: privat-dok-notifikasjon-med-kontakt-info
   namespace: teamdokumenthandtering
   labels:
     team: teamdokumenthandtering
@@ -14,4 +14,7 @@ spec:
   acl:
     - team: teamdokumenthandtering
       application: doknotifikasjon
-      access: readwrite
+      access: read
+    - team: personbruker
+      application: dittnav-varselbestiller
+      access: write

@@ -14,4 +14,4 @@ spec:
   acl:
     - team: teamdokumenthandtering
       application: doknotifikasjon
-      access: read
+      access: readwrite
