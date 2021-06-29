@@ -1,4 +1,4 @@
-# Doknotifikasjon
+# dokumenthandtering-iac
 
 # Funksjonelle Krav
 Denne applikasjonen automatisere arbeidet for å oppdatere eller opprette nye kafka topics til Aiven. For å slette topics så må det gjøres manuelt med å følge denne linken: [nais-aiven](https://doc.nais.io/addons/kafka/#delete-schema) 
