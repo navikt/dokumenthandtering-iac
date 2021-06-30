@@ -14,7 +14,7 @@ spec:
   acl:
     - team: teamdokumenthandtering
       application: doknotifikasjon
-      access: read
+      access: readwrite
     - team: personbruker
       application: dittnav-varselbestiller
       access: write
