@@ -13,5 +13,5 @@ spec:
   {{/each}}
   acl:
     - team: teamdokumenthandtering
-      application: doknotifikasjon
+      application: doknotifikasjon-2
       access: readwrite
