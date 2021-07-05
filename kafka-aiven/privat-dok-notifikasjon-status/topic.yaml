@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: privat-dok-notifikasjon-status
+  name: aapen-dok-notifikasjon-status
   namespace: teamdokumenthandtering
   labels:
     team: teamdokumenthandtering
