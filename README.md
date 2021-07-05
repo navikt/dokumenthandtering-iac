@@ -23,6 +23,18 @@ NAME                 AGE   STATE             FULLY QUALIFIED NAME               
 privat-dok-notifikasjon   2m26s   RolloutComplete   teamdokumenthandtering.privat-dok-notifikasjon
 ```
 
+# Oppdatering av topics
+For å oppdatere er det å gjøre ønsket endringene til filene ```dev-vars.yaml, prod-vars.yaml og topic.yaml```. 
+Endring av navn av topic vil genere en ny topic, dette må gjøres forsiktig og passe på data ikke blir borte.
+
+# Slette en topic
+Følg disse komandoene for å slette topic ifra Aiven, må gjøres i  context ```dev-gcp og prod-gcp```:
+
+```
+kubectl config use-context <context>
+kubectl delete topic <topic> -n teamdokumenthandtering
+```
+
 ### Kubectl
 For dev-gcp:
 ```shell script
