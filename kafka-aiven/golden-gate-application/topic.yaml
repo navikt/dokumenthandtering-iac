@@ -1,10 +1,13 @@
+
 apiVersion: aiven.nais.io/v1
 kind: AivenApplication
 metadata:
   name: teamdokumenthandtering-goldengate
   namespace: teamdokumenthandtering
+  labels:
+    team: teamdokumenthandtering
 spec:
   kafka:
     pool: {{pool}}
-  secretName: kafka-teamdokumenthandtering-goldengate
+  secretName: kafka-teamdokumenthandtering-goldengate-{{pool}}
   protected: true
