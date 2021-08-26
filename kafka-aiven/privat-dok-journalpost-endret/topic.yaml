@@ -13,8 +13,8 @@ spec:
   {{/each}}
   acl:
     - team: teamdokumenthandtering
-      application: joarkhendelser
+      application: doknotifikasjon-2
       access: read
     - team: teamdokumenthandtering
-      application: legacy-golden-gate
+      application: teamdokumenthandtering-goldengate
       access: write
