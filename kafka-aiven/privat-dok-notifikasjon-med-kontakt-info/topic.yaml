@@ -16,5 +16,5 @@ spec:
       application: doknotifikasjon-2
       access: readwrite
     - team: teamsykmelding
-      application: syfosmvarsel
+      application: narmesteleder-varsel
       access: write
