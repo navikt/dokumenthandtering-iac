@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: add-file-existence-check
+    branches: master
     paths:
       - kafka-aiven/**
       - .github/workflows/deploy-kafka-aiven.yaml
