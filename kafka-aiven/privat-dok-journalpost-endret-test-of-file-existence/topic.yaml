@@ -14,9 +14,9 @@ spec:
   {{#each config as |value key|}}
      {{key}}: {{value}}
   {{/each}}
-#  acl:
-#    - team: teamdokumenthandtering
-#      application: joarkhendelser
+  acl:
+    - team: teamdokumenthandtering
+      application: joarkhendelser
 #      access: read
 #    - team: teamdokumenthandtering
 #      application: teamdokumenthandtering-goldengate
