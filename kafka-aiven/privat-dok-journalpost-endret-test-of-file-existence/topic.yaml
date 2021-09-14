@@ -17,7 +17,7 @@ spec:
   acl:
     - team: teamdokumenthandtering
       application: joarkhendelser
-#      access: read
+      access: read
 #    - team: teamdokumenthandtering
 #      application: teamdokumenthandtering-goldengate
 #      access: write
