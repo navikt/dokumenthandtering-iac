@@ -1,12 +1,10 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: privat-dok-journalpost-endret-test-of-both-prod-and-dev
+  name: privat-dok-journalpost-endret-q1
   namespace: teamdokumenthandtering
   labels:
     team: teamdokumenthandtering
-  annotations:
-    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
 spec:
   pool: {{pool}}
   config:
@@ -15,8 +13,8 @@ spec:
   {{/each}}
   acl:
     - team: teamdokumenthandtering
-      application: joarkhendelser
+      application: joarkhendelser-q1
       access: read
-#    - team: teamdokumenthandtering
-#      application: teamdokumenthandtering-goldengate
-#      access: write
+    - team: teamdokumenthandtering
+      application: teamdokumenthandtering-goldengate
+      access: write
