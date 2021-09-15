@@ -5,6 +5,8 @@ metadata:
   namespace: teamdokumenthandtering
   labels:
     team: teamdokumenthandtering
+  annotations:
+    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
 spec:
   pool: {{pool}}
   config:
