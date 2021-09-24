@@ -21,3 +21,6 @@ spec:
     - team: flex
       application: sykepengesoknad-narmesteleder-varsler
       access: read
+    - team: pto
+      application: veilarbaktivitet
+      access: read
