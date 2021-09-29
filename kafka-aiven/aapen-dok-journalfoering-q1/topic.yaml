@@ -1,0 +1,17 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: aapen-dok-journalfoering-q1
+  namespace: teamdokumenthandtering
+  labels:
+    team: teamdokumenthandtering
+spec:
+  pool: {{pool}}
+  config:
+  {{#each config as |value key|}}
+     {{key}}: {{value}}
+  {{/each}}
+  acl:
+    - team: teamdokumenthandtering
+      application: joarkhendelser-q1
+      access: write
