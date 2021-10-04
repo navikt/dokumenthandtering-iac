@@ -15,3 +15,6 @@ spec:
     - team: teamdokumenthandtering
       application: joarkhendelser-q1
       access: write
+    - team: bidrag
+      application: bidrag-dokument-arkiv-feature
+      access: read
