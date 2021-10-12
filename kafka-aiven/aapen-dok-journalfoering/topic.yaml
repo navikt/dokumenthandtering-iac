@@ -18,3 +18,6 @@ spec:
     - team: bidrag
       application: bidrag-dokument-arkiv
       access: read
+    - team: teamdigihot
+      application: hm-joark-listener
+      access: read
