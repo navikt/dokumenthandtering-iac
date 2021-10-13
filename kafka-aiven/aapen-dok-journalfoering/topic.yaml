@@ -21,3 +21,6 @@ spec:
     - team: teamdigihot
       application: hm-joark-listener
       access: read
+    - team: teamdagpenger
+      application: dp-mottak
+      access: read
