@@ -19,5 +19,5 @@ spec:
       application: bidrag-dokument-arkiv-feature
       access: read
     - team: teamdagpenger
-      application: dp-mottak
+      application: dp-joark-mottak
       access: read
