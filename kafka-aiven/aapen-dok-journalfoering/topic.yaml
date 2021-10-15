@@ -24,3 +24,6 @@ spec:
     - team: teamdagpenger
       application: dp-joark-mottak
       access: read
+    - team: teamfamilie
+      application: familie-ef-mottak
+      access: read
