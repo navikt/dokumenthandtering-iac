@@ -27,3 +27,9 @@ spec:
     - team: teamfamilie
       application: familie-ef-mottak
       access: read
+    - team: tpts
+      application: tpts-mottak
+      access: read
+    - team: tpts
+      application: tpts-arena
+      access: read
