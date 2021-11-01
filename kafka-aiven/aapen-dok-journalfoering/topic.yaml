@@ -33,3 +33,6 @@ spec:
     - team: tpts
       application: tpts-arena
       access: read
+    - team: isa
+      application: jfr-infotrygd-q2
+      access: read
