@@ -30,3 +30,6 @@ spec:
     - team: tpts
       application: tpts-arena
       access: read
+    - team: yrkesskade
+      application: yrkesskade-melding-mottak
+      access: read
