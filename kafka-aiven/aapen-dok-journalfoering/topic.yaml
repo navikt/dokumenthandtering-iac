@@ -39,3 +39,6 @@ spec:
     - team: isa
       application: jfr-test-stream-dok-topic
       access: read
+    - team: isa
+      application: jfr-infotrygd
+      access: read
