@@ -42,3 +42,9 @@ spec:
     - team: isa
       application: jfr-infotrygd
       access: read
+    - team: isa
+      application: jfr-arena
+      access: read
+    - team: isa
+      application: jfr-arena-q2
+      access: read
