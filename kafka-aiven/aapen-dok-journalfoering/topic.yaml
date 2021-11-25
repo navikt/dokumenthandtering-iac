@@ -48,3 +48,9 @@ spec:
     - team: isa
       application: jfr-arena-q2
       access: read
+    - team: isa
+      application: jfr-generell
+      access: read
+    - team: isa
+      application: jfr-generell-q2
+      access: read
