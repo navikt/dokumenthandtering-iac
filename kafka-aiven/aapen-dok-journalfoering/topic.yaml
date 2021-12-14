@@ -57,3 +57,6 @@ spec:
     - team: isa
       application: jfr-generell-q2
       access: read
+    - team: dusseldorf
+      application: sif-innsyn-api
+      access: read
