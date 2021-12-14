@@ -36,3 +36,6 @@ spec:
     - team: yrkesskade
       application: yrkesskade-melding-mottak
       access: read
+    - team: dusseldorf
+      application: sif-innsyn-api
+      access: read
