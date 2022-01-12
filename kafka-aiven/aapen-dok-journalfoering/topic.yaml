@@ -31,7 +31,7 @@ spec:
       application: familie-ba-mottak
       access: read
     - team: tpts
-      application: tpts-mottak
+      application: tpts-tiltakspenger-mottak
       access: read
     - team: tpts
       application: tpts-arena
