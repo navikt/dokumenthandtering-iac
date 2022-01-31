@@ -42,3 +42,6 @@ spec:
     - team: flex
       application: flex-joark-mottak
       access: read
+    - team: arbeidsgiver
+      application: dokumentfordeling
+      access: read
