@@ -45,3 +45,6 @@ spec:
     - team: arbeidsgiver
       application: dokumentfordeling
       access: read
+    - team: teamforeldrepenger
+      application: fpfordel
+      access: read
