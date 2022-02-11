@@ -66,3 +66,6 @@ spec:
     - team: flex
       application: flex-joark-mottak
       access: read
+    - team: teamforeldrepenger
+      application: fpfordel
+      access: read
