@@ -48,3 +48,6 @@ spec:
     - team: teamforeldrepenger
       application: fpfordel
       access: read
+    - team: k9saksbehandling
+      application: k9-fordel
+      access: read

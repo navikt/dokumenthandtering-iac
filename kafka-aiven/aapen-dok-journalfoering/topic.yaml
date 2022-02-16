@@ -72,3 +72,6 @@ spec:
     - team: arbeidsgiver
       application: dokumentfordeling
       access: read
+    - team: k9saksbehandling
+      application: k9-fordel
+      access: read
