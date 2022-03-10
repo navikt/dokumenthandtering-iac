@@ -78,3 +78,6 @@ spec:
     - team: teamsykmelding
       application: syfosmpapirmottak
       access: read
+    - team: helsearbeidsgiver
+      application: syfoinntektsmelding
+      access: read
