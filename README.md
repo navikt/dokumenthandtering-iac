@@ -1,55 +1,62 @@
-# dokumenthandtering-iac
+# Dokumenthandtering-iac
 
-# Funksjonelle Krav
-Denne applikasjonen automatisere arbeidet for å oppdatere eller opprette nye kafka topics til Aiven. For å slette topics så må det gjøres manuelt med å følge denne linken: [nais-aiven](https://doc.nais.io/addons/kafka/#delete-schema) 
+Denne applikasjonen automatiserer arbeidet med å oppdatere eller opprette nye Kafka-topics til Aiven for Team Dokumentløsninger. 
+Mer informasjon om vedlikehold og tilgjengelige operasjoner kan finnes på [Managing topics and access in Nais](https://doc.nais.io/persistence/kafka/manage_topics/).  
 
-Denne applikasjonen er basert på [dagpenger-iac](https://github.com/navikt/dagpenger-iac)
+Dokumenthandtering-iac er basert på [dagpenger-iac](https://github.com/navikt/dagpenger-iac).
 
-# Forutsetninger
-* Tilgang for å deploye til teamdokumenthandtering på github
-* Sette opp lokalt tilgang for gcp for [kubectl](https://doc.nais.io/basics/access/#authenticate-kubectl)
+For å kunne gjøre forandringer på Aiven-topicene må du ha installert kubectl og satt opp [tilgang til GCP](https://doc.nais.io/basics/access/#authenticate-kubectl).
 
-# Opprettelse av topics
-
+## Opprettelse av topics
 1. Lag en katalog med ønsket topic navn under [kafka-aiven](kafka-aiven)
-2. Legg til filene ```dev-vars.yaml, prod-vars.yaml og topic.yaml``` for henholdsvis template variabler til dev, prod og selve topic definisjonen.
-3. Sjekk GHA action kjører OK.
-4. Sjekk at topics er ressursen er opprettet og klar i dev/prod-gcp klustrene
+2. Legg til filene ```dev-vars.yaml, prod-vars.yaml og topic.yaml``` for templatevariabler til henholdsvis dev og prod, og selve topic-definisjonen.
+3. Merge inn en PR og sjekk at Github Action kjører OK.
+4. Sjekk at topic-ressursen er opprettet og klar i dev/prod-gcp klustrene
 
 ```
-kubectl -n teamdokumenthandtering get topic
+kubectl get topic -n teamdokumenthandtering
 
 NAME                 AGE   STATE             FULLY QUALIFIED NAME               CREDENTIALS EXPIRY TIME
 privat-dok-notifikasjon   2m26s   RolloutComplete   teamdokumenthandtering.privat-dok-notifikasjon
 ```
 
-# Oppdatering av topics
-For å oppdatere er det å gjøre ønsket endringene til filene ```dev-vars.yaml, prod-vars.yaml og topic.yaml```. 
-Endring av navn av topic vil genere en ny topic, dette må gjøres forsiktig og passe på data ikke blir borte.
+## Endring av ACL-liste for et topic
+Legg til en ny bolk i ```topic.yaml``` i mappen under [kafka-aiven](kafka-aiven) med topicnavnet du vil gjøre endringer på.
+```
+    - team: bidrag
+      application: bidrag-dokument-arkiv-feature
+      access: read
+```
 
-# Slette en topic
-Følg disse komandoene for å slette topic ifra Aiven, må gjøres i  context ```dev-gcp og prod-gcp```:
+## Større forandringer på topic
+### Oppdatering av topickonfigurasjon
+For å oppdatere en topic sin konfigurasjon kan ```dev-vars.yaml``` og ```prod-vars.yaml``` justeres. 
+Merk at endring av topicnavn i ```topic.yaml``` vil generere en ny topic.
 
+### Slette topic
+Følg disse komandoene for å [slette topic i Aiven](https://doc.nais.io/persistence/kafka/manage_topics/#permanently-deleting-topic-and-data). 
+For å også slette tilhørende data kan det hende at en annotasjon må bli commitet før sletting.
+Husk at slettingen må gjøres i riktig context - altså at enten ```dev-gcp``` eller ```prod-gcp``` må være valgt:
 ```
 kubectl config use-context <context>
 kubectl delete topic <topic> -n teamdokumenthandtering
 ```
 
-### Kubectl
-For dev-gcp:
+### Kubectl-kommandoer for å se bl.a. ACL-listen til et topic
+I dev-gcp:
 ```shell script
 kubectl config use-context dev-gcp
-kubectl get -n teamdokumenthandtering topic
-kubectl -n teamdokumenthandtering describe topic <topic>
+kubectl get topic -n teamdokumenthandtering
+kubectl describe topic <topic> -n teamdokumenthandtering 
 ```
 
-For prod-gcp:
+I prod-gcp:
 ```shell script
 kubectl config use-context prod-gcp
-kubectl  get -n teamdokumenthandtering topic 
-kubectl -n teamdokumenthandtering describe topic <topic>
+kubectl  get topic -n teamdokumenthandtering 
+kubectl describe topic <topic> -n teamdokumenthandtering 
 ```
 
 ## Henvendelser
 Spørsmål koden eller prosjekttet kan rettes til Team Dokumentløsninger på:
-* [\#Team Dokumentløsninger](https://nav-it.slack.com/client/T5LNAMWNA/C6W9E5GPJ)
+[\#Team Dokumentløsninger](https://nav-it.slack.com/client/T5LNAMWNA/C6W9E5GPJ)
