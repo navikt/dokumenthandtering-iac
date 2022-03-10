@@ -54,3 +54,9 @@ spec:
     - team: teampensjon
       application: pensr-q1
       access: read
+    - team: teamsykmelding
+      application: syfosmpapirmottak
+      access: read
+    - team: helsearbeidsgiver
+      application: syfoinntektsmelding
+      access: read
