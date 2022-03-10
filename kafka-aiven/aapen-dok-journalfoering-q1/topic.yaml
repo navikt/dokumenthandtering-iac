@@ -51,6 +51,9 @@ spec:
     - team: k9saksbehandling
       application: k9-fordel
       access: read
+    - team: teampensjon
+      application: pensr-q1
+      access: read
     - team: teamsykmelding
       application: syfosmpapirmottak
       access: read
