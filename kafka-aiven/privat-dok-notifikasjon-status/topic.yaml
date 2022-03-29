@@ -27,3 +27,6 @@ spec:
     - team: pto
       application: veilarbaktivitet
       access: read
+    - team: min-side
+      application: tms-kafka-manager
+      access: read
