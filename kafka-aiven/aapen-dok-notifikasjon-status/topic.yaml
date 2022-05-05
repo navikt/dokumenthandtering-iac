@@ -18,6 +18,9 @@ spec:
     - team: teamdokumenthandtering
       application: dokdistdittnav
       access: read
+    - team: teamdokumenthandtering
+      application: varsel2
+      access: read
     - team: teamsykmelding
       application: narmesteleder-varsel
       access: read
