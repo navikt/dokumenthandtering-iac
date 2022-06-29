@@ -21,9 +21,6 @@ spec:
     - team: flex
       application: sykepengesoknad-narmesteleder-varsler
       access: write
-    - team: flex
-      application: syfovarsel
-      access: write
     - team: teamdokumenthandtering
       application: varsel2
       access: write
