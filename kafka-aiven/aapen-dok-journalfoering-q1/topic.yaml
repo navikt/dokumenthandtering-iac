@@ -54,9 +54,6 @@ spec:
     - team: pensjon-saksbehandling
       application: pensr-q1
       access: read
-    - team: teampensjon
-      application: pensr-q1
-      access: read
     - team: teamsykmelding
       application: syfosmpapirmottak
       access: read
