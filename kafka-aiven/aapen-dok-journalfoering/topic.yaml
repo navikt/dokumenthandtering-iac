@@ -75,6 +75,9 @@ spec:
     - team: k9saksbehandling
       application: k9-fordel
       access: read
+    - team: pensjon-saksbehandling
+      application: pensr
+      access: read
     - team: pensjondeployer
       application: pensr
       access: read
