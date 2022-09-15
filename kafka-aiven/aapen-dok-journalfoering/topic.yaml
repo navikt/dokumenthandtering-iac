@@ -75,6 +75,9 @@ spec:
     - team: pensjon-saksbehandling
       application: pensr
       access: read
+    - team: pensjon-saksbehandling
+      application: pensr-q2
+      access: read
     - team: teamsykmelding
       application: syfosmpapirmottak
       access: read
