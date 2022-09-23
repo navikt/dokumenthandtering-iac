@@ -39,6 +39,9 @@ spec:
     - team: min-side
       application: dittnav-event-aggregator
       access: read
+    - team: min-side
+      application: tms-doknotstatus-converter
+      access: read
     - team: aap
       application: soknad-api
       access: read
