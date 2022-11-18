@@ -57,3 +57,6 @@ spec:
     - team: helsearbeidsgiver
       application: syfoinntektsmelding
       access: read
+    - team: aap
+      application: soknad-api
+      access: read
