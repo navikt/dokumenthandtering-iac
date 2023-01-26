@@ -63,3 +63,6 @@ spec:
     - team: aap
       application: soknad-api
       access: read
+    - team: aap
+      application: routing
+      access: read
