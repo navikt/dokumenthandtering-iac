@@ -1,2 +1,3 @@
 pool: nav-prod
+secretName: kafka-teamdokumenthandtering-goldengate-nav-prod-2
 
