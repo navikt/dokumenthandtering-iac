@@ -9,5 +9,5 @@ metadata:
 spec:
   kafka:
     pool: {{pool}}
-  secretName: kafka-teamdokumenthandtering-goldengate-{{secretsuffix}}
+  secretName: {{secretName}}
   protected: true
