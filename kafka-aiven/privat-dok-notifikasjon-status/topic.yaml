@@ -1,0 +1,15 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: privat-dok-notifikasjon-status
+  namespace: teamdokumenthandtering
+  labels:
+    team: teamdokumenthandtering
+  annotations:
+    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
+spec:
+  pool: {{pool}}
+  config:
+  {{#each config as |value key|}}
+    {{key}}: {{value}}
+  {{/each}}
