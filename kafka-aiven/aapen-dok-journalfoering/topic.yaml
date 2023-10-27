@@ -96,3 +96,6 @@ spec:
     - team: aap
       application: routing
       access: read
+    - team: etterlatte
+      application: etterlatte-hendelser-joark
+      access: read
