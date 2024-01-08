@@ -72,3 +72,7 @@ spec:
     - team: aap
       application: routing
       access: read
+    - team: klage
+      application: kabal-api
+      access: read
+      
