@@ -51,7 +51,7 @@ jobs:
           PRINT_PAYLOAD: true
       - name: Check if prod-vars.yaml exist
         id: prod_vars_exist
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: "kafka-aiven/${{ matrix.topic }}/prod-vars.yaml"
       - name: Deploy to prod
