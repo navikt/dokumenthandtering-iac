@@ -19,14 +19,13 @@ jobs:
       - id: find-changed-topics
         run: |
           MATRIX=$(git diff-tree --diff-filter=d --no-commit-id --name-only -r ${{ github.event.before }} ${{ github.sha }} | grep kafka-aiven/ | cut -d '/' -f 2 | sort -u | paste -d',' -s )
-          echo The changed topics that will be updated are $MATRIX
           if [[  -z "${MATRIX// }" ]]; then
             echo "No topics have been changed"
             echo "topicsHaveChanged=false" >> $GITHUB_OUTPUT
             echo "changedTopics=[]" >> $GITHUB_OUTPUT
           else
             JSON=$(jq -c -n --arg v $MATRIX '{"topic": $v|split(",")}')
-            echo "Setting output changedTopics to $JSON"
+            echo "The changed topics are $JSON"
             echo "topicsHaveChanged=true" >> $GITHUB_OUTPUT
             echo "changedTopics=$JSON" >> $GITHUB_OUTPUT
           fi
