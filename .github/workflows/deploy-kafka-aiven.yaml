@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changedTopics: ${{ steps.find-changed-topics.outputs.changedTopics }}
-      noTopicsHaveChanged: ${{ steps.find-changed-topics.outputs.noTopicsHaveChanged }}
+      topicsHaveChanged: ${{ steps.find-changed-topics.outputs.topicsHaveChanged }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -22,19 +22,19 @@ jobs:
           echo The changed topics that will be updated are $MATRIX
           if [[  -z "${MATRIX// }" ]]; then
             echo "No topics have been changed"
-            echo "noTopicsHaveChanged=true" >> $GITHUB_OUTPUT
+            echo "topicsHaveChanged=false" >> $GITHUB_OUTPUT
             echo "changedTopics=[]" >> $GITHUB_OUTPUT
           else
             JSON=$(jq -c -n --arg v $MATRIX '{"topic": $v|split(",")}')
             echo "Setting output changedTopics to $JSON"
-            echo "noTopicsHaveChanged=false" >> $GITHUB_OUTPUT
+            echo "topicsHaveChanged=true" >> $GITHUB_OUTPUT
             echo "changedTopics=$JSON" >> $GITHUB_OUTPUT
           fi
 
   deploy-to-dev-and-prod:
     needs: detect-changed-topics
     runs-on: ubuntu-latest
-    if: needs.detect-changed-topics.outputs.noTopicsHaveChanged == 'false'
+    if: needs.detect-changed-topics.outputs.topicsHaveChanged == 'true'
     strategy:
       fail-fast: true
       matrix: ${{ fromJson(needs.detect-changed-topics.outputs.changedTopics) }}
