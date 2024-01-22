@@ -24,3 +24,6 @@ spec:
     - team: teamdokumenthandtering
       application: naisclioffset
       access: read
+    - team: min-side
+      application: tms-ekstern-varselbestiller
+      access: write
