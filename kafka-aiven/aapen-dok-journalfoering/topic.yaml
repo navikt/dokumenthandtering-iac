@@ -93,6 +93,9 @@ spec:
     - team: helsearbeidsgiver
       application: syfoinntektsmelding
       access: read
+    - team: helsearbeidsgiver
+      application: spinosaurus
+      access: read
     - team: aap
       application: dokumenter
       access: read
