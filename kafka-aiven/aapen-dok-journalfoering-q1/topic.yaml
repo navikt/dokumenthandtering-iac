@@ -64,9 +64,6 @@ spec:
       application: syfosmpapirmottak
       access: read
     - team: helsearbeidsgiver
-      application: syfoinntektsmelding
-      access: read
-    - team: helsearbeidsgiver
       application: spinosaurus
       access: read
     - team: aap
