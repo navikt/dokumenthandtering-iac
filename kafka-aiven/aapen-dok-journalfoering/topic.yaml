@@ -107,4 +107,7 @@ spec:
       access: read
     - team: klage
       application: kabal-api
+      access: read
+    - team: aap
+      application: mottak
       access: read      
