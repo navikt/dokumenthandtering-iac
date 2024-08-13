@@ -36,6 +36,9 @@ spec:
     - team: pto
       application: veilarbdialog
       access: read
+    - team: dab
+      application: veilarbdialog
+      access: read
     - team: min-side
       application: tms-kafka-manager
       access: read
