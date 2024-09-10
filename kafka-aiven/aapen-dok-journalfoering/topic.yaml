@@ -110,4 +110,7 @@ spec:
       access: read
     - team: aap
       application: mottak
-      access: read      
+      access: read
+    - team: aap
+      application: postmottak-backend
+      access: read   
