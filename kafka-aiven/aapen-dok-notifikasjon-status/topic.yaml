@@ -21,6 +21,9 @@ spec:
     - team: teamdokumenthandtering
       application: varsel2
       access: read
+    - team: teamdokumenthandtering
+      application: naisclioffset
+      access: read
     - team: teamsykmelding
       application: narmesteleder-varsel
       access: read
