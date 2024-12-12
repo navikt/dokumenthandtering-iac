@@ -66,12 +66,6 @@ spec:
     - team: helsearbeidsgiver
       application: spinosaurus
       access: read
-    - team: aap
-      application: soknad-api
-      access: read
-    - team: aap
-      application: routing
-      access: read
     - team: klage
       application: kabal-api
       access: read
