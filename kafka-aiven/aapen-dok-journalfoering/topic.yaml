@@ -93,23 +93,11 @@ spec:
     - team: helsearbeidsgiver
       application: spinosaurus
       access: read
-    - team: aap
-      application: dokumenter
-      access: read
-    - team: aap
-      application: soknad-api
-      access: read
-    - team: aap
-      application: routing
-      access: read
     - team: etterlatte
       application: etterlatte-hendelser-joark
       access: read
     - team: klage
       application: kabal-api
-      access: read
-    - team: aap
-      application: mottak
       access: read
     - team: aap
       application: postmottak-backend

@@ -51,6 +51,3 @@ spec:
     - team: min-side
       application: tms-doknotstatus-converter
       access: read
-    - team: aap
-      application: soknad-api
-      access: read
