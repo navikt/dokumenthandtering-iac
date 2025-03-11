@@ -104,4 +104,7 @@ spec:
       access: read
     - team: aap
       application: postmottak-backend
-      access: read   
+      access: read
+    - team: tilleggsstonader
+      application: tilleggsstonader-sak
+      access: read
