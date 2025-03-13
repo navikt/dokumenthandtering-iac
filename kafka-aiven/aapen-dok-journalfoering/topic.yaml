@@ -60,6 +60,9 @@ spec:
     - team: yrkesskade
       application: yrkesskade-melding-mottak
       access: read
+    - team: yrkesskade
+      application: yrkesskade-saksbehandling-backend
+      access: read
     - team: flex
       application: flex-joark-mottak
       access: read
