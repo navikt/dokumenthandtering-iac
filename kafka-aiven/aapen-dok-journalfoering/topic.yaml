@@ -111,3 +111,6 @@ spec:
     - team: tilleggsstonader
       application: tilleggsstonader-sak
       access: read
+    - team: tpts
+      application: tiltakspenger-journalposthendelser
+      access: read
