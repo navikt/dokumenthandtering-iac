@@ -41,9 +41,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
       - name: Deploy to dev
-        uses: nais/deploy/actions/deploy@v1
+        uses: nais/deploy/actions/deploy@v2
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           RESOURCE: kafka-aiven/${{ matrix.topic }}/topic.yaml
           VARS: kafka-aiven/${{ matrix.topic }}/dev-vars.yaml
@@ -55,9 +54,8 @@ jobs:
           files: "kafka-aiven/${{ matrix.topic }}/prod-vars.yaml"
       - name: Deploy to prod
         if: steps.prod_vars_exist.outputs.files_exists == 'true'
-        uses: nais/deploy/actions/deploy@v1
+        uses: nais/deploy/actions/deploy@v2
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
           RESOURCE: kafka-aiven/${{ matrix.topic }}/topic.yaml
           VARS: kafka-aiven/${{ matrix.topic }}/prod-vars.yaml
