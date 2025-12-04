@@ -72,6 +72,9 @@ spec:
     - team: teamforeldrepenger
       application: fpoversikt
       access: read
+    - team: teamforeldrepenger
+      application: fpmottak
+      access: read
     - team: arbeidsgiver
       application: dokumentfordeling
       access: read
