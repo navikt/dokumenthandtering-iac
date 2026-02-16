@@ -15,3 +15,6 @@ spec:
     - team: teamdokumenthandtering
       application: doknotifikasjon-2
       access: readwrite
+    - team: teamdokumenthandtering
+      application: naisclioffset
+      access: read
