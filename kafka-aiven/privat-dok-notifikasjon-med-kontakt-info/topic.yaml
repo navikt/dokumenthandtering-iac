@@ -24,3 +24,6 @@ spec:
     - team: teamdokumenthandtering
       application: varsel2
       access: write
+    - team: min-side
+      application: tms-endre-kontonummer
+      access: write
