@@ -30,9 +30,6 @@ spec:
     - team: teamfamilie
       application: familie-baks-mottak
       access: read
-    - team: tpts
-      application: tiltakspenger-mottak
-      access: read
     - team: yrkesskade
       application: yrkesskade-melding-mottak
       access: read
@@ -59,9 +56,6 @@ spec:
       access: read
     - team: k9saksbehandling
       application: ung-sak
-      access: read
-    - team: pensjon-saksbehandling
-      application: pensr-q1
       access: read
     - team: pensjon-q1
       application: pensjon-pen-q1

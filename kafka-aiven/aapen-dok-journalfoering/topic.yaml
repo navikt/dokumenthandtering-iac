@@ -30,9 +30,6 @@ spec:
     - team: teamfamilie
       application: familie-baks-mottak
       access: read
-    - team: tpts
-      application: tiltakspenger-mottak
-      access: read
     - team: isa
       application: jfr-infotrygd-q2
       access: read
@@ -83,12 +80,6 @@ spec:
       access: read
     - team: k9saksbehandling
       application: ung-sak
-      access: read
-    - team: pensjon-saksbehandling
-      application: pensr
-      access: read
-    - team: pensjon-saksbehandling
-      application: pensr-q2
       access: read
     - team: pensjon-q2
       application: pensjon-pen-q2

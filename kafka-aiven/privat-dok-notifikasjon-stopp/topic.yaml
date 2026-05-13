@@ -22,8 +22,5 @@ spec:
       application: dokdistavstemming
       access: write
     - team: min-side
-      application: tms-ekstern-varselbestiller
-      access: write
-    - team: min-side
       application: tms-ekstern-varsling
       access: write

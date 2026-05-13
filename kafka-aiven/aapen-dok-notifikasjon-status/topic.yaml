@@ -43,11 +43,5 @@ spec:
       application: veilarbdialog
       access: read
     - team: min-side
-      application: tms-kafka-manager
-      access: read
-    - team: min-side
-      application: dittnav-event-aggregator
-      access: read
-    - team: min-side
       application: tms-doknotstatus-converter
       access: read
