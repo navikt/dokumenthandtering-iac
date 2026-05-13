@@ -19,9 +19,6 @@ spec:
       application: dittnav-varselbestiller
       access: write
     - team: teamdokumenthandtering
-      application: varsel2
-      access: write
-    - team: teamdokumenthandtering
       application: naisclioffset
       access: read
     - team: min-side

@@ -21,9 +21,6 @@ spec:
     - team: flex
       application: sykepengesoknad-narmesteleder-varsler
       access: write
-    - team: teamdokumenthandtering
-      application: varsel2
-      access: write
     - team: min-side
       application: tms-endre-kontonummer
       access: write
