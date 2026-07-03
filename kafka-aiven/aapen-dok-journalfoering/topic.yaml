@@ -90,6 +90,9 @@ spec:
     - team: teamsykmelding
       application: syfosmpapirmottak
       access: read
+    - team: teamsykmelding
+      application: pale-2
+      access: read
     - team: helsearbeidsgiver
       application: spinosaurus
       access: read
