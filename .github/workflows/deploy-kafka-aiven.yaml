@@ -51,11 +51,14 @@ jobs:
           PRINT_PAYLOAD: true
       - name: Check if prod-vars.yaml exist
         id: prod_vars_exist
-        uses: andstor/file-existence-action@v3
-        with:
-          files: "kafka-aiven/${{ matrix.topic }}/prod-vars.yaml"
+        run: |
+          if [[ -e kafka-aiven/$TOPIC/prod-vars.yaml ]]; then
+            echo "vars_exist=true" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          TOPIC: ${{ matrix.topic }}
       - name: Deploy to prod
-        if: steps.prod_vars_exist.outputs.files_exists == 'true'
+        if: steps.prod_vars_exist.outputs.vars_exist == 'true'
         uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: prod-gcp
