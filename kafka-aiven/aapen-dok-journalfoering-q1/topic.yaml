@@ -15,6 +15,7 @@ spec:
     - team: teamdigihot
       application: hm-joark-listener
       access: read
+
     - team: teamdokumenthandtering
       application: joarkhendelser-q1
       access: write
