@@ -18,16 +18,15 @@ jobs:
           fetch-depth: 0
       - id: find-changed-topics
         run: |
-          MATRIX=$(git diff-tree --diff-filter=d --no-commit-id --name-only -r ${{ github.event.before }} ${{ github.sha }} | grep kafka-aiven/ | cut -d '/' -f 2 | sort -u | paste -d',' -s )
-          if [[  -z "${MATRIX// }" ]]; then
+          mapfile -t matrix < <(git diff-tree --diff-filter=d --no-commit-id --name-only -r ${{ github.event.before }} ${{ github.sha }} | awk -F/ '$1 == "kafka-aiven" && !a[$2]++ { print $2 }')
+          if ! [[ $matrix ]]; then
             echo "No topics have been changed"
-            echo "topicsHaveChanged=false" >> $GITHUB_OUTPUT
-            echo "changedTopics=[]" >> $GITHUB_OUTPUT
           else
-            JSON=$(jq -c -n --arg v $MATRIX '{"topic": $v|split(",")}')
-            echo "The changed topics are $JSON"
-            echo "topicsHaveChanged=true" >> $GITHUB_OUTPUT
-            echo "changedTopics=$JSON" >> $GITHUB_OUTPUT
+            json=$(jq --null-input --compact-output '{topic: $ARGS.positional}' --args "${matrix[@]}")
+            echo "The changed topics are:"
+            printf '  %s\n' "${matrix[@]}"
+            echo "topicsHaveChanged=true" >> "$GITHUB_OUTPUT"
+            echo "changedTopics=$json" >> "$GITHUB_OUTPUT"
           fi
 
   deploy-to-dev-and-prod:
