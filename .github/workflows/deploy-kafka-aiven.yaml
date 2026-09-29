@@ -37,7 +37,7 @@ jobs:
       id-token: write
     if: needs.detect-changed-topics.outputs.topicsHaveChanged == 'true'
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix: ${{ fromJson(needs.detect-changed-topics.outputs.changedTopics) }}
     steps:
       - name: Checkout code
