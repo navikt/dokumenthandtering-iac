@@ -18,16 +18,15 @@ jobs:
           fetch-depth: 0
       - id: find-changed-topics
         run: |
-          MATRIX=$(git diff-tree --diff-filter=d --no-commit-id --name-only -r ${{ github.event.before }} ${{ github.sha }} | grep kafka-aiven/ | cut -d '/' -f 2 | sort -u | paste -d',' -s )
-          if [[  -z "${MATRIX// }" ]]; then
+          mapfile -t matrix < <(git diff-tree --diff-filter=d --no-commit-id --name-only -r ${{ github.event.before }} ${{ github.sha }} | awk -F/ '$1 == "kafka-aiven" && !a[$2]++ { print $2 }')
+          if ! [[ $matrix ]]; then
             echo "No topics have been changed"
-            echo "topicsHaveChanged=false" >> $GITHUB_OUTPUT
-            echo "changedTopics=[]" >> $GITHUB_OUTPUT
           else
-            JSON=$(jq -c -n --arg v $MATRIX '{"topic": $v|split(",")}')
-            echo "The changed topics are $JSON"
-            echo "topicsHaveChanged=true" >> $GITHUB_OUTPUT
-            echo "changedTopics=$JSON" >> $GITHUB_OUTPUT
+            json=$(jq --null-input --compact-output '{topic: $ARGS.positional}' --args "${matrix[@]}")
+            echo "The changed topics are:"
+            printf '  %s\n' "${matrix[@]}"
+            echo "topicsHaveChanged=true" >> "$GITHUB_OUTPUT"
+            echo "changedTopics=$json" >> "$GITHUB_OUTPUT"
           fi
 
   deploy-to-dev-and-prod:
@@ -52,11 +51,14 @@ jobs:
           PRINT_PAYLOAD: true
       - name: Check if prod-vars.yaml exist
         id: prod_vars_exist
-        uses: andstor/file-existence-action@v3
-        with:
-          files: "kafka-aiven/${{ matrix.topic }}/prod-vars.yaml"
+        run: |
+          if [[ -e kafka-aiven/$TOPIC/prod-vars.yaml ]]; then
+            echo "vars_exist=true" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          TOPIC: ${{ matrix.topic }}
       - name: Deploy to prod
-        if: steps.prod_vars_exist.outputs.files_exists == 'true'
+        if: steps.prod_vars_exist.outputs.vars_exist == 'true'
         uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: prod-gcp
