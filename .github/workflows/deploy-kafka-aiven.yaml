@@ -37,7 +37,7 @@ jobs:
       id-token: write
     if: needs.detect-changed-topics.outputs.topicsHaveChanged == 'true'
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix: ${{ fromJson(needs.detect-changed-topics.outputs.changedTopics) }}
     steps:
       - name: Checkout code
@@ -49,13 +49,16 @@ jobs:
           RESOURCE: kafka-aiven/${{ matrix.topic }}/topic.yaml
           VARS: kafka-aiven/${{ matrix.topic }}/dev-vars.yaml
           PRINT_PAYLOAD: true
-      - name: Ensure prod-vars.yaml exists
+      - name: Check if prod-vars.yaml exist
         id: prod_vars_exist
         run: |
-          [[ -e kafka-aiven/$TOPIC/prod-vars.yaml ]]
+          if [[ -e kafka-aiven/$TOPIC/prod-vars.yaml ]]; then
+            echo "vars_exist=true" >> "$GITHUB_OUTPUT"
+          fi
         env:
           TOPIC: ${{ matrix.topic }}
       - name: Deploy to prod
+        if: steps.prod_vars_exist.outputs.vars_exist == 'true'
         uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: prod-gcp
