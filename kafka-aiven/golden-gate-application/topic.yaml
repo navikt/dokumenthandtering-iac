@@ -1,4 +1,5 @@
 apiVersion: aiven.nais.io/v1
+
 kind: AivenApplication
 metadata:
   name: teamdokumenthandtering-goldengate

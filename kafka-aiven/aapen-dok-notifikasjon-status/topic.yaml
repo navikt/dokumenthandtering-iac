@@ -1,4 +1,5 @@
 apiVersion: kafka.nais.io/v1
+
 kind: Topic
 metadata:
   name: aapen-dok-notifikasjon-status
