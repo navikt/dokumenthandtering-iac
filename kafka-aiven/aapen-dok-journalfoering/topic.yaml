@@ -111,3 +111,6 @@ spec:
     - team: tpts
       application: tiltakspenger-journalposthendelser
       access: read
+    - team: ufore
+      application: ufore-soknad-mottak
+      access: read
