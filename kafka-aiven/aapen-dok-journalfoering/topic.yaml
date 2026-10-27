@@ -112,5 +112,5 @@ spec:
       application: tiltakspenger-journalposthendelser
       access: read
     - team: ufore
-      application: ufore-soknad-mottak
+      application: ufore-dokument-mottak
       access: read
