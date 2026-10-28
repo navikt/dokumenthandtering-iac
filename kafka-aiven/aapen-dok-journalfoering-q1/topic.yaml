@@ -63,9 +63,6 @@ spec:
     - team: teamsykmelding
       application: syfosmpapirmottak
       access: read
-    - team: helsearbeidsgiver
-      application: spinosaurus
-      access: read
     - team: klage
       application: kabal-api
       access: read
