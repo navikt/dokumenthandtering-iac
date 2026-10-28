@@ -93,9 +93,6 @@ spec:
     - team: teamsykmelding
       application: pale-2
       access: read
-    - team: helsearbeidsgiver
-      application: spinosaurus
-      access: read
     - team: etterlatte
       application: etterlatte-hendelser-joark
       access: read
