@@ -111,3 +111,7 @@ spec:
     - team: ufore
       application: ufore-dokument-mottak
       access: read
+    - team: tsm
+      application: tsm-papirmottak
+      access: read
+      
